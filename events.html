@@ -30,7 +30,6 @@
     .event-card:hover { transform: translateY(-5px); box-shadow:0 0 15px #FFD700; }
     .event-card img { border-radius:12px 12px 0 0; max-height:250px; width:100%; object-fit:cover; }
 
-    /* Ensure buttons are clickable and not blocked by parent onclick */
     .event-card .btn-wrapper { position: relative; z-index: 2; }
 
     .event-card button {
@@ -45,6 +44,26 @@
       cursor:pointer;
     }
     .event-card button:hover { background-color:#000; color:#FFD700; border:1px solid #FFD700; }
+
+    /* Gallery styling */
+    .attendee-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
+    }
+    .attendee-gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #FFD700;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .attendee-gallery img:hover {
+      transform: scale(1.05);
+    }
 
     #popupOverlay {
       display:none;
@@ -111,33 +130,69 @@
     <h1>Upcoming Events</h1>
     <div class="row g-4 mt-3">
 
-      <!-- Thrive Together Sessions -->
-      <div class="col-md-6">
-        <div class="event-card" onclick="openPopup('service4.webp')">
-          <img src="service4.webp" alt="Thrive Together Sessions">
+      <!-- International Women's Day Conference -->
+      <div class="col-md-12">
+        <div class="event-card" onclick="openPopup('event.webp')">
+          <img src="event.webp" alt="International Women’s Day Conference">
           <div class="p-4 btn-wrapper">
-            <h3>Thrive Together Sessions</h3>
-            <p><strong>Every Thursday at 7 PM</strong></p>
-            <p>Networking platform providing entrepreneurial, employability, and business information to the right people. Join our weekly sessions to connect, learn, and grow.</p>
-            <button onclick="event.stopPropagation(); window.open('https://wa.me/2767454179?text=Hi%20Masram%20Group,%20I%20want%20to%20join%20the%20Thrive%20Together%20Session','_blank')">Join via WhatsApp</button>
+            <h3>International Women’s Day Conference</h3>
+            <p><strong>Date:</strong> 06 March 2026</p>
+            <p><strong>Venue:</strong> Bon Hotel Rustenburg</p>
+            <p>Join us for an empowering and inspiring day as we celebrate women’s achievements, leadership, and resilience during this prestigious International Women’s Day Conference hosted by Masram Group.</p>
+            <button onclick="event.stopPropagation(); window.open('https://selar.com/t11k39978o','_blank')">Register Now</button>
           </div>
         </div>
       </div>
 
-      <!-- International Women's Day Conference -->
-<div class="col-md-6">
-  <div class="event-card" onclick="openPopup('event.webp')">
-    <img src="event.webp" alt="International Women’s Day Conference">
-    <div class="p-4 btn-wrapper">
-      <h3>International Women’s Day Conference</h3>
-      <p><strong>Date:</strong> 06 March 2026</p>
-      <p><strong>Venue:</strong> Bon Hotel Rustenburg</p>
-      <p>Join us for an empowering and inspiring day as we celebrate women’s achievements, leadership, and resilience during this prestigious International Women’s Day Conference hosted by Masram Group.</p>
-      <button onclick="event.stopPropagation(); window.open('https://selar.com/t11k39978o','_blank')">Register Now</button>
+      <!-- Attendee/Speaker Gallery -->
+<div class="col-12">
+  <h2 class="text-center mt-5">Featured Speakers</h2>
+  <div class="row g-4 mt-3">
+    <!-- Speaker 1 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <img src="speaker1.jpg" alt="Dr. Maphiri" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="openPopup('speaker1.jpg')">
+      <p class="mt-2 mb-1"><strong>Dr. Maphiri</strong></p>
+      <small>Medical Doctor<br>(Family Physician)</small>
+    </div>
+
+    <!-- Speaker 2 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <a href="https://www.linkedin.com/in/janet-kwamboka-49385998" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#FFD700;">
+        <img src="speaker2.jpg" alt="Janet Kwamboka" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="event.stopPropagation(); openPopup('speaker2.jpg')">
+        <p class="mt-2 mb-1"><strong>Janet Kwamboka</strong></p>
+        <small>Inner Power<br>Consultants Ltd</small>
+      </a>
+    </div>
+
+    <!-- Speaker 3 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <img src="speaker3.jpg" alt="Josephine Osumo" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="openPopup('speaker3.jpg')">
+      <p class="mt-2 mb-1"><strong>Josephine Osumo</strong></p>
+      <small>Facilitator &<br>Leadership Coach</small>
+    </div>
+
+    <!-- Speaker 4 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <img src="speaker4.jpg" alt="Wellness Strategist" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="openPopup('speaker4.jpg')">
+      <p class="mt-2 mb-1"><strong>Wellness Strategist</strong></p>
+      <small>NLP Mindset Coach<br>• Transformational Speaker</small>
+    </div>
+
+    <!-- Speaker 5 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <img src="speaker5.jpg" alt="HR Practitioner" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="openPopup('speaker5.jpg')">
+      <p class="mt-2 mb-1"><strong>Youth Mentor</strong></p>
+      <small>HR Practitioner<br>& Youth Mentor</small>
+    </div>
+
+    <!-- Speaker 6 -->
+    <div class="col-6 col-md-4 col-lg-2 text-center">
+      <img src="speaker6.jpg" alt="Belly Jullians Orondo" class="img-fluid rounded" style="height:120px; object-fit:cover; border:1px solid #FFD700;" onclick="openPopup('speaker6.jpg')">
+      <p class="mt-2 mb-1"><strong>Belly Jullians Orondo</strong></p>
+      <small>Communications<br>Specialist & Entrepreneur</small>
     </div>
   </div>
 </div>
-
 
     </div>
   </div>
